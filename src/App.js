@@ -22,10 +22,10 @@ function App() {
     <Router>
       <nav>
         <div>
-          <NavLink to="/" activeClassName="active" isActive={checkActive}>
+          <NavLink to="/">
             <img src={LOGO} alt="logo" />
           </NavLink>
-          <NavLink to="/" activeClassName="active" isActive={checkActive}>
+          <NavLink to="/">
             <h1>Space Travelers&apos; Hub</h1>
           </NavLink>
         </div>
