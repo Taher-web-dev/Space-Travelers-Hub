@@ -45,3 +45,10 @@ nav div a.active {
   text-decoration: none;
   color: black;
 }
+
+hr{
+  background-color: rgb(230, 233, 236);
+  color: rgb(230, 233, 236);
+  width: 92.5%;
+  margin-left: 3.75%;
+}
