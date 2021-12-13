@@ -22,7 +22,6 @@ td {
 }
 
 .member {
-  margin: 40% 0;
   border: none;
   position: relative;
   width: 95%;
@@ -40,4 +39,21 @@ td {
 .not-member {
   background-color: #777e86;
   text-transform: uppercase;
+}
+
+.mission {
+  width: 80%;
+  font-family: 'Courier New', Courier, monospace, sans-serif;
+  height: 30px;
+}
+
+.join-mission {
+  border: 1px solid  rgb(158, 161, 164);
+  color: rgb(94, 99, 104);
+}
+
+.leave-mission {
+  border: 1px solid rgb(222, 66, 80);
+  color:rgb(222, 66, 80);
+  background-color: #fff;
 }

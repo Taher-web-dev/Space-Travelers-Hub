@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 import './mission.css';
 
 const Missions = () => {
@@ -14,7 +14,23 @@ const Missions = () => {
   {
     id: 't7dg1', missionName: 'go and stop', description: '7andhjshsjjsjjsjshshssnj', reserved: false,
   }];
-  let i = 0;
+  // let i = 0;
+  const adjustMarginButton = () => {
+    const btns = Array.from(document.querySelectorAll('button'));
+    btns.forEach((btn) => {
+      const parent = btn.parentNode.parentNode;
+      const h = parent.offsetHeight;
+      console.log(parent);
+      const margin = `${0.4 * parseInt(h, 10)}`;
+      const elements = parent.querySelectorAll('button');
+      for (let i = 0; i < elements.length; i += 1) {
+        const elem = elements[i];
+        if (elem.className.includes('mission')) elem.style.margin = `${margin - 6}px 10% `;
+        else elem.style.margin = `${margin}px 0`;
+      }
+    });
+  };
+  useEffect(() => adjustMarginButton(), []);
   return (
     <table style={{ borderCollapse: 'collapse', width: '90%', margin: '1.25% 5%' }}>
       <thead>
@@ -27,12 +43,12 @@ const Missions = () => {
       </thead>
       <tbody>
         {missions.map((mission) => {
-          i += 1;
+          // i += 1;
           const {
             id, missionName, description, reserved,
           } = mission;
           return (
-            <tr key={id} style={(i % 2 === 0) ? { backgroundColor: '#fff' } : { backgroundColor: 'rgb(242, 242, 242)' }}>
+            <tr key={id} style={(reserved) ? { backgroundColor: '#fff' } : { backgroundColor: 'rgb(242, 242, 242)' }}>
               <td className="mission-name">{missionName}</td>
               <td className="description">{description}</td>
               <td>
@@ -44,9 +60,9 @@ const Missions = () => {
               </td>
               <td>
                 {!reserved
-              && (<button type="submit" className="join-mission">Join Mission</button>)}
+              && (<button type="submit" className="mission join-mission">Join Mission</button>)}
                 { reserved
-               && (<button type="submit" className="leave-mission">Leave Mission</button>
+               && (<button type="submit" className="mission leave-mission">Leave Mission</button>
                )}
               </td>
 
