@@ -1,3 +1,4 @@
+import './App.css';
 import React from 'react';
 import {
   BrowserRouter as Router,
@@ -16,7 +17,7 @@ function App() {
       <nav>
         <div>
           <img src={LOGO} alt="logo" />
-          <h1>Space-Travelers-Hub</h1>
+          <h1>Space Travelers&apos; Hub</h1>
         </div>
         <ul>
           <li>
