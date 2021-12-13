@@ -33,14 +33,14 @@ const Missions = () => {
           } = mission;
           return (
             <tr key={id} style={(i % 2 === 0) ? { backgroundColor: '#fff' } : { backgroundColor: 'rgb(242, 242, 242)' }}>
-              <td>{missionName}</td>
-              <td>{description}</td>
+              <td className="mission-name">{missionName}</td>
+              <td className="description">{description}</td>
               <td>
                 {reserved
             && (
-            <button type="submit" className="active-member"> Active Member</button>)}
+            <button type="submit" className="member active-member"> Active Member</button>)}
                 {!reserved
-            && (<button type="submit" className="not-member"> NOT A MEMBER</button>)}
+            && (<button type="submit" className="member not-member"> NOT A MEMBER</button>)}
               </td>
               <td>
                 {!reserved

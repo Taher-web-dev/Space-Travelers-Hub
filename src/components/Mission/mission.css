@@ -8,3 +8,36 @@ td {
   padding-top: 0.675%;
   vertical-align: top;
 }
+
+.mission-name {
+  font-family: 'Courier New', Courier, monospace,sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.description {
+  font-family: 'Courier New', Courier, monospace, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.member {
+  margin: 40% 0;
+  border: none;
+  position: relative;
+  width: 95%;
+  border-radius: 7.5%;
+  margin-right: 5%;
+  height: 20px;
+  color: #fff;
+  font-weight: 565;
+}
+
+.active-member {
+  background-color:rgb(24, 162, 184);
+}
+
+.not-member {
+  background-color: #777e86;
+  text-transform: uppercase;
+}
