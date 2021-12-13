@@ -1,3 +1,7 @@
+:root {
+  --main-color: #007bff
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -15,10 +19,29 @@ nav div img {
   height: auto;
 }
 
+nav div a {
+  text-decoration: none;
+}
+
 nav ul {
   display: flex;
   align-items: center;
   list-style-type: none;
   padding-left: 0;
   gap: 10px;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+.active {
+  text-decoration: underline;
+}
+
+nav div a,
+nav div a.active {
+  text-decoration: none;
+  color: black;
 }
