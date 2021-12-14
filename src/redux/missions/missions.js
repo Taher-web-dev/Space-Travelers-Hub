@@ -2,6 +2,7 @@ const LOAD_MISSION = 'space/missions/LOAD_MISSION';
 const MISSION_START = 'space/missions/MISSION_START';
 const MISSION_FAILED = 'space/missions/MISSION_FAILED';
 const JOIN_MISSION = 'space/missions/JOIN_MISSION';
+const LEAVE_MISSION = 'space/missions/LEAVE_MISSION';
 const loadMission = (payload) => ({
   type: LOAD_MISSION,
   payload,
@@ -18,6 +19,11 @@ const manageFailure = (payload) => ({
 
 export const allowJoinMission = (payload) => ({
   type: JOIN_MISSION,
+  payload,
+});
+
+export const allowLeaveMission = (payload) => ({
+  type: LEAVE_MISSION,
   payload,
 });
 
@@ -73,6 +79,19 @@ const missionsReducer = (state = { missions: [] }, action) => {
           return {
             ...mission,
             reserved: true,
+          };
+        }),
+      };
+    case LEAVE_MISSION:
+      return {
+        ...state,
+        missions: state.missions.map((mission) => {
+          if (mission.id !== action.payload) {
+            return mission;
+          }
+          return {
+            ...mission,
+            reserved: false,
           };
         }),
       };
