@@ -1,6 +1,7 @@
 const LOAD_MISSION = 'space/missions/LOAD_MISSION';
 const MISSION_START = 'space/missions/MISSION_START';
 const MISSION_FAILED = 'space/missions/MISSION_FAILED';
+const JOIN_MISSION = 'space/missions/JOIN_MISSION';
 const loadMission = (payload) => ({
   type: LOAD_MISSION,
   payload,
@@ -14,6 +15,12 @@ const manageFailure = (payload) => ({
   type: MISSION_FAILED,
   payload,
 });
+
+export const allowJoinMission = (payload) => ({
+  type: JOIN_MISSION,
+  payload,
+});
+
 const fetchData = () => fetch('https://api.spacexdata.com/v3/missions');
 
 const selectData = (arr) => {
@@ -55,6 +62,11 @@ const missionsReducer = (state = { missions: [] }, action) => {
         missions: selectData(action.payload),
         loading: false,
         error: null,
+      };
+    case JOIN_MISSION:
+      return {
+        ...state,
+        reserved: true,
       };
     default:
       return state;
