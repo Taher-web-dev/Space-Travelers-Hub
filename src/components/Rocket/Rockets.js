@@ -1,8 +1,16 @@
 import './Rockets.css';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import RocketItem from './RocketItem';
+import { getRockets } from '../../redux/rockets/rockets';
 
 const Rockets = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getRockets());
+  }, []);
+
   const rockets = [
     {
       id: 1,
