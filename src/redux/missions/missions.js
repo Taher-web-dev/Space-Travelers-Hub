@@ -24,7 +24,7 @@ const selectData = (data) => {
     description,
   };
 };
-export const loadMissionsData = (dispatch) => {
+export const loadMissionsData = () => (dispatch) => {
   dispatch(loadingStart());
   fetchData()
     .then((res) => res.json())

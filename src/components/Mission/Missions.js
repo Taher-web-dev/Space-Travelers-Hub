@@ -1,20 +1,11 @@
 import { React, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import './mission.css';
+import { loadMissionsData } from '../../redux/missions/missions';
 
 const Missions = () => {
-  const missions = [{
-    id: 'tra1',
-    missionName: 'aller sans retour',
-    description: 'hhshhshshsh dhehhdh jsjjsjsj jjdjjdjsjkk kkdejjs  jz kzkiziiz  kzkkks skesjdj dxkkszki kkekk kzkkjjd jjjzj jjjkdjzq klorkije jezkjdejndj jjhhzs jjzsjjszjj jzsjjjsz jjszzhnjnjse jhjzsjks jhds  hse   hesjn esjjs sjjzs sz hsz sjsjkiesd sjsdj szdjskish szdkisd dius skish skis bszisnsz is szoskhs szoeshdhd iesesiiesbg oieshegeb',
-    reserved: true,
-  },
-  {
-    id: 'tgdg1', missionName: 'aller and go', description: 'mis,snjshsn', reserved: false,
-  },
-  {
-    id: 't7dg1', missionName: 'go and stop', description: '7andhjshsjjsjjsjshshssnj', reserved: false,
-  }];
-  // let i = 0;
+  const dispatch = useDispatch();
+  const missions = useSelector((state) => state.missions.missions);
   const adjustMarginButton = () => {
     const btns = Array.from(document.querySelectorAll('button'));
     btns.forEach((btn) => {
@@ -29,6 +20,7 @@ const Missions = () => {
       }
     });
   };
+  useEffect(() => dispatch(loadMissionsData()));
   useEffect(() => adjustMarginButton(), []);
   return (
     <table style={{ borderCollapse: 'collapse', width: '90%', margin: '1.25% 5%' }}>
@@ -42,13 +34,13 @@ const Missions = () => {
       </thead>
       <tbody>
         {missions.map((mission) => {
-          // i += 1;
           const {
-            id, missionName, description, reserved,
+            id, name, description, reserved,
           } = mission;
+          console.log(id);
           return (
             <tr key={id} style={(reserved) ? { backgroundColor: '#fff' } : { backgroundColor: 'rgb(242, 242, 242)' }}>
-              <td className="mission-name">{missionName}</td>
+              <td className="mission-name">{name}</td>
               <td className="description">{description}</td>
               <td>
                 {reserved
