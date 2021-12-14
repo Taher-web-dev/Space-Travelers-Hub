@@ -1,0 +1,29 @@
+.container {
+  margin-top: 30px;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.rocket-item {
+  display: flex;
+  gap: 20px;
+}
+
+.rocket-item img {
+  width: 200px;
+}
+
+.rocket-item h2 {
+  margin-top: 5px;
+}
+
+.rocket-item button {
+  background-color: #007bff;
+  color: white;
+  border: 0;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 2px;
+}

@@ -6,7 +6,7 @@ import {
   Switch,
   NavLink,
 } from 'react-router-dom';
-import Rockets from './components/Rockets';
+import Rockets from './components/Rocket/Rockets';
 import Missions from './components/Mission/Missions';
 import MyProfile from './components/myProfile';
 import LOGO from './assets/images/planet.png';
