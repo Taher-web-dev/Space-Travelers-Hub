@@ -1,7 +1,7 @@
 import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './mission.css';
-import { loadMissionsData, allowJoinMission } from '../../redux/missions/missions';
+import { loadMissionsData, allowJoinMission, allowLeaveMission } from '../../redux/missions/missions';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -26,6 +26,9 @@ const Missions = () => {
   }; */
   const joinMissionHandler = (id) => {
     dispatch(allowJoinMission(id));
+  };
+  const leaveMissionHandler = (id) => {
+    dispatch(allowLeaveMission(id));
   };
   useEffect(() => dispatch(loadMissionsData()), []);
   useEffect(() => adjustMarginButton(), [missions]);
@@ -59,7 +62,7 @@ const Missions = () => {
                 {!reserved
               && (<button type="submit" className="mission join-mission" onClick={() => joinMissionHandler(id)}>Join Mission</button>)}
                 { reserved
-               && (<button type="submit" className="mission leave-mission">Leave Mission</button>
+               && (<button type="submit" className="mission leave-mission" onClick={() => leaveMissionHandler(id)}>Leave Mission</button>
                )}
               </td>
 
