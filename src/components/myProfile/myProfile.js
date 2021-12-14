@@ -2,6 +2,8 @@ import React from 'react';
 import ReservedMission from './ReservedMission';
 
 const MyProfile = () => (
-  <ReservedMission />
+  <div style={{ width: '90%', margin: '1.25% 5%' }}>
+    <ReservedMission />
+  </div>
 );
 export default MyProfile;
