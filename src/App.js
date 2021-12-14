@@ -10,7 +10,7 @@ import { Provider } from 'react-redux';
 import Rockets from './components/Rocket/Rockets';
 import store from './redux/configureStore';
 import Missions from './components/Mission/Missions';
-import MyProfile from './components/myProfile';
+import MyProfile from './components/myProfile/myProfile';
 import LOGO from './assets/images/planet.png';
 
 function App() {
