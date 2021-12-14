@@ -20,15 +20,15 @@ const Missions = () => {
       }
     });
   };
-  const loadAndAlignData = () => {
-    dispatch(loadMissionsData());
+  /* const loadAndAlignData = async () => {
+    await (dispatch(loadMissionsData()));
     adjustMarginButton();
-  };
+  }; */
   const joinMissionHandler = (id) => {
-    console.log(id);
     dispatch(allowJoinMission(id));
   };
-  useEffect(() => loadAndAlignData(), []);
+  useEffect(() => dispatch(loadMissionsData()), []);
+  useEffect(() => adjustMarginButton(), [missions]);
   return (
     <table style={{ borderCollapse: 'collapse', width: '90%', margin: '1.25% 5%' }}>
       <thead>
