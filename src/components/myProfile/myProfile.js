@@ -1,6 +1,7 @@
 import React from 'react';
+import ReservedMission from './ReservedMission';
 
 const MyProfile = () => (
-  <div />
+  <ReservedMission />
 );
 export default MyProfile;
