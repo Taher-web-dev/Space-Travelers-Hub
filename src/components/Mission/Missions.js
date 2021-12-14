@@ -1,7 +1,7 @@
 import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './mission.css';
-import { loadMissionsData } from '../../redux/missions/missions';
+import { loadMissionsData, allowJoinMission } from '../../redux/missions/missions';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -20,13 +20,15 @@ const Missions = () => {
       }
     });
   };
-  const loadAndAlignData = () => {
-    dispatch(loadMissionsData());
+  /* const loadAndAlignData = async () => {
+    await (dispatch(loadMissionsData()));
     adjustMarginButton();
+  }; */
+  const joinMissionHandler = (id) => {
+    dispatch(allowJoinMission(id));
   };
-  useEffect(() => loadAndAlignData());
-  /* useEffect(() => dispatch(loadMissionsData()));
-  useEffect(() => adjustMarginButton(), []); */
+  useEffect(() => dispatch(loadMissionsData()), []);
+  useEffect(() => adjustMarginButton(), [missions]);
   return (
     <table style={{ borderCollapse: 'collapse', width: '90%', margin: '1.25% 5%' }}>
       <thead>
@@ -55,7 +57,7 @@ const Missions = () => {
               </td>
               <td>
                 {!reserved
-              && (<button type="submit" className="mission join-mission">Join Mission</button>)}
+              && (<button type="submit" className="mission join-mission" onClick={() => joinMissionHandler(id)}>Join Mission</button>)}
                 { reserved
                && (<button type="submit" className="mission leave-mission">Leave Mission</button>
                )}
