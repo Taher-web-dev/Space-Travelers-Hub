@@ -16,13 +16,17 @@ const manageFailure = (payload) => ({
 });
 const fetchData = () => fetch('https://api.spacexdata.com/v3/missions');
 
-const selectData = (data) => {
-  const { mission_id: id, mission_name: name, description } = data;
-  return {
-    id,
-    name,
-    description,
-  };
+const selectData = (arr) => {
+  const filteredArray = [];
+  arr.forEach((element) => {
+    const { mission_id: id, mission_name: name, description } = element;
+    filteredArray.push({
+      id,
+      name,
+      description,
+    });
+  });
+  return filteredArray;
 };
 export const loadMissionsData = () => (dispatch) => {
   dispatch(loadingStart());
@@ -48,7 +52,7 @@ const missionsReducer = (state = { missions: [] }, action) => {
     case LOAD_MISSION:
       return {
         ...state,
-        missions: action.payload.filter(selectData),
+        missions: selectData(action.payload),
         loading: false,
         error: null,
       };

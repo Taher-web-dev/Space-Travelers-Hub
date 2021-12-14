@@ -20,8 +20,13 @@ const Missions = () => {
       }
     });
   };
-  useEffect(() => dispatch(loadMissionsData()));
-  useEffect(() => adjustMarginButton(), []);
+  const loadAndAlignData = () => {
+    dispatch(loadMissionsData());
+    adjustMarginButton();
+  };
+  useEffect(() => loadAndAlignData());
+  /* useEffect(() => dispatch(loadMissionsData()));
+  useEffect(() => adjustMarginButton(), []); */
   return (
     <table style={{ borderCollapse: 'collapse', width: '90%', margin: '1.25% 5%' }}>
       <thead>
@@ -37,7 +42,6 @@ const Missions = () => {
           const {
             id, name, description, reserved,
           } = mission;
-          console.log(id);
           return (
             <tr key={id} style={(reserved) ? { backgroundColor: '#fff' } : { backgroundColor: 'rgb(242, 242, 242)' }}>
               <td className="mission-name">{name}</td>
