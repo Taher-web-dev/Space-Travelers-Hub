@@ -25,3 +25,4 @@ const ReservedMission = () => {
       </table>
   )
 }
+export default ReservedMission;
