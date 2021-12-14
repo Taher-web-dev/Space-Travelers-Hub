@@ -20,7 +20,6 @@ const Missions = () => {
     btns.forEach((btn) => {
       const parent = btn.parentNode.parentNode;
       const h = parent.offsetHeight;
-      console.log(parent);
       const margin = `${0.4 * parseInt(h, 10)}`;
       const elements = parent.querySelectorAll('button');
       for (let i = 0; i < elements.length; i += 1) {
