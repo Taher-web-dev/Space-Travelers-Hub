@@ -19,10 +19,18 @@
   margin-top: 5px;
 }
 
-.rocket-item button {
+.rocket-item .reserve-btn {
   background-color: #007bff;
   color: white;
   border: 0;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 2px;
+}
+
+.rocket-item .cancel-reserve-btn {
+  color: #7c7c7c;
+  border: 1px solid #7c7c7c;
   cursor: pointer;
   padding: 10px;
   border-radius: 2px;
