@@ -1,7 +1,8 @@
-td,th {
+td,
+th {
   border: 1px solid rgb(230, 233, 236);
   text-align: left;
-  padding-left: 0.675%; 
+  padding-left: 0.675%;
 }
 
 td {
@@ -10,7 +11,7 @@ td {
 }
 
 .mission-name {
-  font-family: 'Courier New', Courier, monospace,sans-serif;
+  font-family: 'Courier New', Courier, monospace, sans-serif;
   font-weight: 700;
   font-size: 13px;
 }
@@ -33,7 +34,7 @@ td {
 }
 
 .active-member {
-  background-color:rgb(24, 162, 184);
+  background-color: rgb(24, 162, 184);
 }
 
 .not-member {
@@ -54,6 +55,6 @@ td {
 
 .leave-mission {
   border: 1px solid rgb(222, 66, 80);
-  color:rgb(222, 66, 80);
+  color: rgb(222, 66, 80);
   background-color: #fff;
 }
