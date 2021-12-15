@@ -28,7 +28,7 @@ const Missions = () => {
   };
   useEffect(() => adjustMarginButton(), [missions]);
   return (
-    <table style={{ borderCollapse: 'collapse', width: '90%', margin: '1.25% 5%' }}>
+    <table style={{ borderCollapse: 'collapse', width: '90%', margin: '1.25% 20px 5% 5%' }}>
       <thead>
         <tr>
           <th style={{ width: '11.7%' }}>Mission</th>
