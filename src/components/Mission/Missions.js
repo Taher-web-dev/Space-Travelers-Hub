@@ -26,7 +26,6 @@ const Missions = () => {
   const leaveMissionHandler = (id) => {
     dispatch(allowLeaveMission(id));
   };
-  // useEffect(() => dispatch(loadMissionsData()), []);
   useEffect(() => adjustMarginButton(), [missions]);
   return (
     <table style={{ borderCollapse: 'collapse', width: '90%', margin: '1.25% 5%' }}>
