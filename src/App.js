@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useEffect } from 'react';
+import { React, useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -7,6 +7,7 @@ import {
   NavLink,
 } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { loadMissionsData } from './redux/missions/missions';
 import Rockets from './components/Rocket/Rockets';
 import Missions from './components/Mission/Missions';
 import MyProfile from './components/myProfile/myProfile';
@@ -25,7 +26,8 @@ function App() {
     const { pathname } = location;
     return pathname === '/';
   };
-
+  const dispatch = useDispatch();
+  useEffect(() => dispatch(loadMissionsData()), []);
   return (
     <Router>
       <header>

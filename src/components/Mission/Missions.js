@@ -1,7 +1,7 @@
 import { React, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import './mission.css';
-import { loadMissionsData, allowJoinMission, allowLeaveMission } from '../../redux/missions/missions';
+import { allowJoinMission, allowLeaveMission } from '../../redux/missions/missions';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -20,17 +20,13 @@ const Missions = () => {
       }
     });
   };
-  /* const loadAndAlignData = async () => {
-    await (dispatch(loadMissionsData()));
-    adjustMarginButton();
-  }; */
   const joinMissionHandler = (id) => {
     dispatch(allowJoinMission(id));
   };
   const leaveMissionHandler = (id) => {
     dispatch(allowLeaveMission(id));
   };
-  useEffect(() => dispatch(loadMissionsData()), []);
+  // useEffect(() => dispatch(loadMissionsData()), []);
   useEffect(() => adjustMarginButton(), [missions]);
   return (
     <table style={{ borderCollapse: 'collapse', width: '90%', margin: '1.25% 5%' }}>
