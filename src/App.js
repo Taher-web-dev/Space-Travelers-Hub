@@ -6,11 +6,11 @@ import {
   Switch,
 } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { loadMissionsData } from './redux/missions/missions';
+import loadMissionsData from './redux/missions/thunk/thunk';
 import Rockets from './components/Rocket/Rockets';
 import Missions from './components/Mission/Missions';
 import MyProfile from './components/myProfile/myProfile';
-import { getRockets } from './redux/rockets/rockets';
+import { getRockets } from './redux/rockets/thunk/thunk';
 import Navbar from './Navbar';
 
 function App() {

@@ -1,33 +1,6 @@
-const LOAD_MISSION = 'space/missions/LOAD_MISSION';
-const MISSION_START = 'space/missions/MISSION_START';
-const MISSION_FAILED = 'space/missions/MISSION_FAILED';
-const JOIN_MISSION = 'space/missions/JOIN_MISSION';
-const LEAVE_MISSION = 'space/missions/LEAVE_MISSION';
-const loadMission = (payload) => ({
-  type: LOAD_MISSION,
-  payload,
-});
-
-const loadingStart = () => ({
-  type: MISSION_START,
-});
-
-const manageFailure = (payload) => ({
-  type: MISSION_FAILED,
-  payload,
-});
-
-export const allowJoinMission = (payload) => ({
-  type: JOIN_MISSION,
-  payload,
-});
-
-export const allowLeaveMission = (payload) => ({
-  type: LEAVE_MISSION,
-  payload,
-});
-
-const fetchData = () => fetch('https://api.spacexdata.com/v3/missions');
+import {
+  MISSION_START, MISSION_FAILED, LEAVE_MISSION, LOAD_MISSION, JOIN_MISSION,
+} from '../actions/actions';
 
 const selectData = (arr) => {
   const filteredArray = [];
@@ -40,13 +13,6 @@ const selectData = (arr) => {
     });
   });
   return filteredArray;
-};
-export const loadMissionsData = () => (dispatch) => {
-  dispatch(loadingStart());
-  fetchData()
-    .then((res) => res.json())
-    .then((result) => dispatch(loadMission(result)))
-    .catch((err) => dispatch(manageFailure(err.message)));
 };
 
 const missionsReducer = (state = { missions: [] }, action) => {

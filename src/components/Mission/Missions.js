@@ -1,7 +1,7 @@
 import { React, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './mission.css';
-import { allowJoinMission, allowLeaveMission } from '../../redux/missions/missions';
+import { allowJoinMission, allowLeaveMission } from '../../redux/missions/actions/actions';
 
 const Missions = () => {
   const dispatch = useDispatch();
