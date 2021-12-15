@@ -6,7 +6,7 @@
 
 
 
-<img src='/home/taher/Documents/Microverse_Program/Module_3/Space-Travelers-Hub/src/assets/images/overview_animated.gif' alt='screenshot'/>
+<img src='https://github.com/Taher-web-dev/Space-Travelers-Hub/blob/dev/src/assets/images/overview_animated.gif' alt='screenshot'/>
 
 
 ## Built With
