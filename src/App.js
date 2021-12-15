@@ -26,7 +26,6 @@ function App() {
     const { pathname } = location;
     return pathname === '/';
   };
-  const dispatch = useDispatch();
   useEffect(() => dispatch(loadMissionsData()), []);
   return (
     <Router>
