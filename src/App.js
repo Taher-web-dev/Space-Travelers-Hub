@@ -19,6 +19,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getRockets());
+    dispatch(loadMissionsData());
   }, []);
 
   const checkActive = (match, location) => {
@@ -26,7 +27,7 @@ function App() {
     const { pathname } = location;
     return pathname === '/';
   };
-  useEffect(() => dispatch(loadMissionsData()), []);
+
   return (
     <Router>
       <header>
