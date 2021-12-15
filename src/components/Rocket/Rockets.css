@@ -19,6 +19,10 @@
   margin-top: 5px;
 }
 
+.rocket-item p {
+  line-height: 1.6;
+}
+
 .rocket-item .reserve-btn {
   background-color: #007bff;
   color: white;
@@ -34,4 +38,12 @@
   cursor: pointer;
   padding: 10px;
   border-radius: 2px;
+}
+
+.reserved-tag {
+  background-color: #007bff;
+  color: white;
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 3px;
 }

@@ -22,23 +22,31 @@ const RocketItem = (props) => {
       <img src={rocket.flickr_images[0]} alt={rocket.rocket_name} />
       <div>
         <h2>{rocket.name}</h2>
-        <p>{rocket.description}</p>
-        <button
-          className="reserve-btn"
-          type="button"
-          onClick={reserveRocket}
-          style={{ display: rocket.reserved ? 'none' : 'block' }}
-        >
-          Reserve Rocket
-        </button>
-        <button
-          className="cancel-reserve-btn"
-          type="button"
-          onClick={cancelReserveRocket}
-          style={{ display: !rocket.reserved ? 'none' : 'block' }}
-        >
-          Cancel Reservation
-        </button>
+        <p>
+          {rocket.reserved && (
+            <span className="reserved-tag">Reserved</span>
+          )}
+          {` ${rocket.description}`}
+        </p>
+        {!rocket.reserved && (
+          <button
+            className="reserve-btn"
+            type="button"
+            onClick={reserveRocket}
+          >
+            Reserve Rocket
+          </button>
+        )}
+        {rocket.reserved && (
+          <button
+            className="cancel-reserve-btn"
+            type="button"
+            onClick={cancelReserveRocket}
+          >
+            Cancel Reservation
+          </button>
+        )}
+
       </div>
     </div>
   );
