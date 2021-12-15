@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Chicken Meals!
+# Space-Travelers-Hub
 
 > In this project, we have built a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 
