@@ -1,5 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
@@ -53,11 +51,23 @@ const RocketItem = (props) => {
 };
 
 RocketItem.defaultProps = {
-  rocket: {},
+  rocket: {
+    id: 0,
+    name: '',
+    type: '',
+    flickr_images: [''],
+    description: '',
+  },
 };
 
 RocketItem.propTypes = {
-  rocket: PropTypes.object,
+  rocket: {
+    id: PropTypes.number,
+    name: PropTypes.string,
+    type: PropTypes.string,
+    flickr_images: [PropTypes.string],
+    description: PropTypes.string,
+  },
 };
 
 export default RocketItem;
