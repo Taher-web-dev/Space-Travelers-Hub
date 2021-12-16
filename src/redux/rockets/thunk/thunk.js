@@ -1,6 +1,6 @@
 import { GET_ROCKETS, BOOK_ROCKET, CANCEL_BOOK_ROCKET } from '../actions/actions';
 
-const fetchRocketsData = () => fetch('https://api.spacexdata.com/v3/rockets')
+export const fetchRocketsData = () => fetch('https://api.spacexdata.com/v3/rockets')
   .then((response) => response.json())
   .then((response) => response.map((rocket) => (
     {

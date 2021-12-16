@@ -17,7 +17,7 @@ const RocketItem = (props) => {
 
   return (
     <div className="rocket-item">
-      <img src={rocket.flickr_images[0]} alt={rocket.rocket_name} />
+      <img src={rocket.flickr_images[0]} alt={rocket.name} />
       <div>
         <h2>{rocket.name}</h2>
         <p>
@@ -55,19 +55,21 @@ RocketItem.defaultProps = {
     id: 0,
     name: '',
     type: '',
+    reserved: false,
     flickr_images: [''],
     description: '',
   },
 };
 
 RocketItem.propTypes = {
-  rocket: {
+  rocket: PropTypes.shape({
     id: PropTypes.number,
     name: PropTypes.string,
     type: PropTypes.string,
-    flickr_images: [PropTypes.string],
+    reserved: PropTypes.bool,
+    flickr_images: PropTypes.arrayOf(PropTypes.string),
     description: PropTypes.string,
-  },
+  }),
 };
 
 export default RocketItem;
